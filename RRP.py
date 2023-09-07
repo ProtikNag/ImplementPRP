@@ -16,7 +16,7 @@ def implement_RRP(A, r):
         pick_random_index = np.random.choice(index_list, p=probability_distribution)
         a = A[:, pick_random_index]
         delta = np.inner(a, r) / np.inner(a, a)
-        x = x + delta
+        x[pick_random_index] = x[pick_random_index] + delta
         r = (r - (a * delta))
 
         stage += 1
